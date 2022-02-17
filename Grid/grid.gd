@@ -21,6 +21,8 @@ var possible_pieces = [
 	load("res://Pieces/F.tscn")
 ]
 
+var music = null
+
 var all_pieces
 
 var first_touch
@@ -34,6 +36,10 @@ func _ready():
 	all_pieces = make_array()
 	setup_board()
 	generate_pieces()
+	if music == null:
+		music = get_node_or_null("root/Game/music")
+	if music != null:
+		music.play()
 
 func make_array():
 	var matrix = [ ]

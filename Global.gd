@@ -17,8 +17,9 @@ var scores = {
 	9:1000
 }
 
+
 func _ready():
-	randomize()	
+	randomize()
 
 func _unhandled_input(event):
 	if event.is_action_pressed("menu"):
@@ -27,3 +28,4 @@ func _unhandled_input(event):
 func change_score(s):
 	score += s
 	emit_signal("changed")
+	
